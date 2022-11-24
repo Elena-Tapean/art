@@ -82,6 +82,18 @@ export default new Vuex.Store({
     SET_TEXT (state, data) {
       state.articles = data
       state.articlesCopy = [...data]
+    },
+    NEXT_ARTICLE_PARA (state, {id}) {
+      const index = state.articles.findIndex(article => article.id === id)
+      const count = state.articles[index].count
+      const articleUpdated = {...state.articles[index], count}
+      Vue.set(state.articles, index, articleUpdated)
+    },
+    PREV_ARTICLE_PARA (state, {id}) {
+      const index = state.articles.findIndex(article => article.id === id)
+      const count = state.articles[index].count > 0
+      const articleUpdated = {...state.articles[index], count}
+      Vue.set(state.articles, index, articleUpdated)
     }
   },
   actions: {

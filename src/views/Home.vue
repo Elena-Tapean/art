@@ -2,6 +2,10 @@
   <div class="home-page">
     <h1>Manipularea prin Imagini</h1>
     <h3>de Elena ȚĂPEAN</h3>
+    <div>
+      <button class="article-button" @click="prev(article.id)">previous</button>
+      <button class="article-button" @click="next(article.id)">next</button>
+    </div>
     <ul>
       <li v-for="article in articles" :key="article.id">
         <p v-html="article.text" />
@@ -29,6 +33,14 @@ export default {
       const articles = this.$store.state.articles
       const article = articles.filter(obj => obj.id.toString() === id)[0]
       return article
+    }
+  },
+  methods: {
+    prev(id) {
+      this.$store.commit('PREV_ARTICLE_PARA', {id})
+    },
+    next(id) {
+      this.$store.commit('NEXT_ARTICLE_PARA', {id})
     }
   }
 }
@@ -82,14 +94,22 @@ export default {
     hr {
       width: 30%;
     }
-    #source {
-      padding-bottom: 25px;
-      text-align: center;
-      font-size: 15px;
-    }
     ul, li {
       list-style-type: none;
     }
+    .article-button {
+      margin: 0 25px;
+      margin-bottom: 15px;
+      padding: 5px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: rgb(228, 83, 131);
+      color: white;
+      font-size: 15px;
+      }
+      .article-button:hover {
+        background-color: rgb(218, 30, 93);
+      }
   }
 }
 </style>
