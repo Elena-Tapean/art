@@ -1,13 +1,19 @@
 <template>
-  <div class="home-page">
-    <h1>Manipularea prin Imagini</h1>
-    <h3>de Elena ȚĂPEAN</h3>
-    <ul>
-      <li v-for="article in articles" :key="article.id">
-        <p v-html="article.text" />
-      </li>
-    </ul>
-  </div>
+  <section class="home-page">
+    <div class="shader-bg">
+      <h1>Manipularea prin Imagini</h1>
+      <h3>de Elena ȚĂPEAN</h3>
+      <ul>
+        <li v-for="article in articles" :key="article.id">
+          <p v-html="article.text" />
+        </li>
+      </ul>
+      <hr/>
+      <span>
+        Articol apărut în revista semestrială de cultură, InterArtes, Anul III, nr. 4, 2014, ISSN 2285-9357, ISSN-L 2285-9357. 
+      </span>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -37,54 +43,44 @@ export default {
 <style lang="scss">
 .home-page {
   @media only screen and (min-width: 0) {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 300% 300%;
-	  -webkit-animation: gradientBG 10s ease infinite;
-	        animation: gradientBG 10s ease infinite;
+    padding-bottom: 50px;
 
-    @-webkit-keyframes gradientBG {
-	    0% {
-		    background-position: 0% 50%;
-	    }
-	    50% {
-		    background-position: 100% 50%;
-	    }
-	    100% {
-		    background-position: 0% 50%;
-	    }
-    }
-    @keyframes gradientBG {
-	    0% {
-		    background-position: 0% 50%;
-	    }
-	    50% {
-		    background-position: 100% 50%;
-	    }
-	    100% {
-		    background-position: 0% 50%;
-	    }
-    }
-
-    h1 {
-      margin: 0;
-      padding-top: 50px;
-    }
-    h1, h3, p {
-      color: black;
-    }
-    p {
-      margin: 0 250px;
-      text-align: justify;
-      font-size: 18px;
-      text-indent: 50px;
-      line-height: 2;
-    }
-    hr {
-      width: 30%;
-    }
-    ul, li {
-      list-style-type: none;
-    }
+    .shader-bg {
+      margin: 5px 300px;
+      padding: 5px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 5px;
+      
+      h1 {
+        margin: 0;
+        padding-top: 50px;
+      }
+      h1, h3, p {
+        color: black;
+      }
+      hr {
+        width: 30%;
+      }
+      p {
+        margin: 0 50px;
+        text-align: justify;
+        font-size: 18px;
+        text-indent: 50px;
+        line-height: 2;
+      }
+      ul, li {
+        list-style-type: none;
+      }
+      span {
+        text-align: center;
+        font-size: 17px;
+        line-height: 2;
+      }
+      .image-illus {
+        width: 30px;
+        height: 30px;
+      }
+    }  
   }
 }
 </style>

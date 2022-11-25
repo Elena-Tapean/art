@@ -12,7 +12,7 @@ export default new Vuex.Store({
       },
       {
         id: 2,
-        text: 'În picturi, oamenii deslușeau povestea dintr-o singură privire, sau din mai multe, având în vedere că nu toți s-au antrenat în științele critice literare sau vizuale. În cărți, oameniilor le trebuiau adesea zile și încă altele pentru a descoperi și tainele metaforice (existente) în acestea. De aceea, poate, și cu un mic ajutor din partea industriei de ilustrații, oamenii au început să prefere imaginea, fiind mai captivantă, mai ușor de deslușit și antrenantă pentru imaginația omului. S-a răspândit repede acest cult al imaginilor în toată Europa, din Marea Britanie (având primele ilustrații în romanele de aventuri) până în Germania, Franța, și mai ales în America, unde chiar și istoria pictată a indienilor americani promova într-un mod similar uzanța imaginilor de defavoarea textelor scrise.'
+        text: 'În picturi, oamenii deslușeau povestea dintr-o singură privire, sau din mai multe, având în vedere că nu toți s-au antrenat în științele critice literare sau vizuale. În cărți, oameniilor le trebuiau adesea zile și încă altele pentru a descoperi și tainele metaforice (existente) în acestea. De aceea, poate, și cu un mic ajutor din partea industriei de ilustrații, oamenii au început să prefere imaginea, fiind mai captivantă, mai ușor de deslușit și antrenantă pentru imaginația omului. S-a răspândit repede acest cult al imaginilor în toată Europa, din Marea Britanie (având primele ilustrații în romanele de aventuri) până în Germania, Franța, și mai ales în America, unde chiar și istoria pictată a indienilor americani promova într-un mod similar uzanța imaginilor în defavoarea textelor scrise.'
       },
       {
         id: 3,
@@ -69,10 +69,40 @@ export default new Vuex.Store({
       {
         id: 16,
         text: 'În ultimele decenii, chiar și în timpul celor două războaie mondiale, cărțile n-au încetat a fi scrise - și nici în timpul marelui succes al imaginilor. Unii oameni preferă liniștea unei cărți decât alarma trepidantă a televiziunii (tele-imaginii), alții preferă propria imaginație decât imaginația altuia (a ilustratorului, spre exemplu). De aceea, cărțile au devenit refugiul perfect după o zi agitată la serviciu. Chiar dacă calculatorul, laptop-ul sau smartphone-urile au înlocuit televizorul, locul cărții e undeva aparte.'
+      }
+    ],
+    illustrations: [
+      {
+        id: 1,
+        img: require('../assets/crusoe.jpg')
       },
       {
-        id: 17,
-        text: 'Articol apărut în revista semestrială de cultură, InterArtes, Anul III, nr. 4, 2014, ISSN 2285-9357, ISSN-L 2285-9357. <br/> (c) Copyright. Elena Țăpean. 2014-2022.'
+        id: 2,
+        img: require('../assets/warhol.jpg')
+      },
+      {
+        id: 3,
+        img: require('../assets/spiderman.jpg')
+      },
+      {
+        id: 4,
+        img: require('../assets/dragon-ball.jpg')
+      },
+      {
+        id: 5,
+        img: require('../assets/reclama.jpg')
+      },
+      {
+        id: 6,
+        img: require('../assets/marketing.png')
+      },
+      {
+        id: 7,
+        img: require('../assets/fight-club.jpg')
+      },
+      {
+        id: 8,
+        img: require('../assets/book.jpg')
       }
     ]
   },
@@ -83,17 +113,9 @@ export default new Vuex.Store({
       state.articles = data
       state.articlesCopy = [...data]
     },
-    NEXT_ARTICLE_PARA (state, {id}) {
-      const index = state.articles.findIndex(article => article.id === id)
-      const count = state.articles[index].count
-      const articleUpdated = {...state.articles[index], count}
-      Vue.set(state.articles, index, articleUpdated)
-    },
-    PREV_ARTICLE_PARA (state, {id}) {
-      const index = state.articles.findIndex(article => article.id === id)
-      const count = state.articles[index].count > 0
-      const articleUpdated = {...state.articles[index], count}
-      Vue.set(state.articles, index, articleUpdated)
+    SET_ILLUSTRATIONS (state, images) {
+      state.illustrations = images
+      state.illustrationsCopy = [...images]
     }
   },
   actions: {
@@ -107,7 +129,7 @@ export default new Vuex.Store({
             },
             {
               id: 2,
-              text: 'În picturi, oamenii deslușeau povestea dintr-o singură privire, sau din mai multe, având în vedere că nu toți s-au antrenat în științele critice literare sau vizuale. În cărți, oameniilor le trebuiau adesea zile și încă altele pentru a descoperi și tainele metaforice (existente) în acestea. De aceea, poate, și cu un mic ajutor din partea industriei de ilustrații, oamenii au început să prefere imaginea, fiind mai captivantă, mai ușor de deslușit și antrenantă pentru imaginația omului. S-a răspândit repede acest cult al imaginilor în toată Europa, din Marea Britanie (având primele ilustrații în romanele de aventuri) până în Germania, Franța, și mai ales în America, unde chiar și istoria pictată a indienilor americani promova într-un mod similar uzanța imaginilor de defavoarea textelor scrise.'
+              text: 'În picturi, oamenii deslușeau povestea dintr-o singură privire, sau din mai multe, având în vedere că nu toți s-au antrenat în științele critice literare sau vizuale. În cărți, oameniilor le trebuiau adesea zile și încă altele pentru a descoperi și tainele metaforice (existente) în acestea. De aceea, poate, și cu un mic ajutor din partea industriei de ilustrații, oamenii au început să prefere imaginea, fiind mai captivantă, mai ușor de deslușit și antrenantă pentru imaginația omului. S-a răspândit repede acest cult al imaginilor în toată Europa, din Marea Britanie (având primele ilustrații în romanele de aventuri) până în Germania, Franța, și mai ales în America, unde chiar și istoria pictată a indienilor americani promova într-un mod similar uzanța imaginilor în defavoarea textelor scrise.'
             },
             {
               id: 3,
@@ -164,13 +186,52 @@ export default new Vuex.Store({
             {
               id: 16,
               text: 'În ultimele decenii, chiar și în timpul celor două războaie mondiale, cărțile n-au încetat a fi scrise - și nici în timpul marelui succes al imaginilor. Unii oameni preferă liniștea unei cărți decât alarma trepidantă a televiziunii (tele-imaginii), alții preferă propria imaginație decât imaginația altuia (a ilustratorului, spre exemplu). De aceea, cărțile au devenit refugiul perfect după o zi agitată la serviciu. Chiar dacă calculatorul, laptop-ul sau smartphone-urile au înlocuit televizorul, locul cărții e undeva aparte.'
-            },
-            {
-              id: 17,
-              text: 'Articol apărut în revista semestrială de cultură, InterArtes, Anul III, nr. 4, 2014, ISSN 2285-9357, ISSN-L 2285-9357. <br/> (c) Copyright. Elena Țăpean. 2014-2022.'
             }
           ]
           commit('SET_TEXT', data)
+        }, 1000)
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async get_images ({commit}) {
+      try {
+        setTimeout (() => {
+          const images = [
+            {
+              id: 1,
+              img: require('../assets/crusoe.jpg')
+            },
+            {
+              id: 2,
+              img: require('../assets/warhol.jpg')
+            },
+            {
+              id: 3,
+              img: require('../assets/spiderman.jpg')
+            },
+            {
+              id: 4,
+              img: require('../assets/dragon-ball.jpg')
+            },
+            {
+              id: 5,
+              img: require('../assets/reclama.jpg')
+            },
+            {
+              id: 6,
+              img: require('../assets/marketing.png')
+            },
+            {
+              id: 7,
+              img: require('../assets/fight-club.jpg')
+            },
+            {
+              id: 8,
+              img: require('../assets/book.jpg')
+            }
+          ]
+          commit('SET_ILLUSTRATIONS', images)
         }, 1000)
       } catch (error) {
         console.log(error)
