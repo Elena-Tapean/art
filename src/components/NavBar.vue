@@ -3,7 +3,6 @@
         <nav>
             <router-link to="/">Home</router-link>
             <router-link to="/publications">Publications</router-link>
-            <router-link to="/gallery">Gallery</router-link>
         </nav>
     </header>
 </template>
@@ -21,10 +20,6 @@ export default {
                 {
                     name: 'Publications',
                     to: '/publications'
-                },
-                {
-                    name: 'Gallery',
-                    to: '/gallery'
                 }
             ]
         }

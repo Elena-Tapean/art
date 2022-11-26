@@ -70,40 +70,6 @@ export default new Vuex.Store({
         id: 16,
         text: 'În ultimele decenii, chiar și în timpul celor două războaie mondiale, cărțile n-au încetat a fi scrise - și nici în timpul marelui succes al imaginilor. Unii oameni preferă liniștea unei cărți decât alarma trepidantă a televiziunii (tele-imaginii), alții preferă propria imaginație decât imaginația altuia (a ilustratorului, spre exemplu). De aceea, cărțile au devenit refugiul perfect după o zi agitată la serviciu. Chiar dacă calculatorul, laptop-ul sau smartphone-urile au înlocuit televizorul, locul cărții e undeva aparte.'
       }
-    ],
-    illustrations: [
-      {
-        id: 1,
-        img: require('../assets/crusoe.jpg')
-      },
-      {
-        id: 2,
-        img: require('../assets/warhol.jpg')
-      },
-      {
-        id: 3,
-        img: require('../assets/spiderman.jpg')
-      },
-      {
-        id: 4,
-        img: require('../assets/dragon-ball.jpg')
-      },
-      {
-        id: 5,
-        img: require('../assets/reclama.jpg')
-      },
-      {
-        id: 6,
-        img: require('../assets/marketing.png')
-      },
-      {
-        id: 7,
-        img: require('../assets/fight-club.jpg')
-      },
-      {
-        id: 8,
-        img: require('../assets/book.jpg')
-      }
     ]
   },
   getters: {
@@ -112,10 +78,6 @@ export default new Vuex.Store({
     SET_TEXT (state, data) {
       state.articles = data
       state.articlesCopy = [...data]
-    },
-    SET_ILLUSTRATIONS (state, images) {
-      state.illustrations = images
-      state.illustrationsCopy = [...images]
     }
   },
   actions: {
@@ -189,49 +151,6 @@ export default new Vuex.Store({
             }
           ]
           commit('SET_TEXT', data)
-        }, 1000)
-      } catch (error) {
-        console.log(error)
-      }
-    },
-    async get_images ({commit}) {
-      try {
-        setTimeout (() => {
-          const images = [
-            {
-              id: 1,
-              img: require('../assets/crusoe.jpg')
-            },
-            {
-              id: 2,
-              img: require('../assets/warhol.jpg')
-            },
-            {
-              id: 3,
-              img: require('../assets/spiderman.jpg')
-            },
-            {
-              id: 4,
-              img: require('../assets/dragon-ball.jpg')
-            },
-            {
-              id: 5,
-              img: require('../assets/reclama.jpg')
-            },
-            {
-              id: 6,
-              img: require('../assets/marketing.png')
-            },
-            {
-              id: 7,
-              img: require('../assets/fight-club.jpg')
-            },
-            {
-              id: 8,
-              img: require('../assets/book.jpg')
-            }
-          ]
-          commit('SET_ILLUSTRATIONS', images)
         }, 1000)
       } catch (error) {
         console.log(error)
