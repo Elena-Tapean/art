@@ -1,7 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import Publications from '../views/Publications.vue';
+import Gallery from '../views/Gallery.vue';
+import About from '../views/About.vue';
+import Contact from '../views/Contact.vue';
+import Pages from '../views/Pages.vue';
 
 Vue.use(VueRouter)
 
@@ -12,9 +15,24 @@ const routes = [
     component: Home
   },
   {
-    path: '/publications',
-    name: 'publications',
-    component: Publications
+    path: '/gallery',
+    name: 'gallery',
+    component: Gallery
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: About
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: Contact
+  },
+  {
+    path: '/pages/:id',
+    name: 'pages',
+    component: Pages
   }
 ]
 

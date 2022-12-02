@@ -6,6 +6,7 @@ html, body {
 }
 
 body {
+	margin-top: 50px;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 300%;
 	  -webkit-animation: gradientBG 10s ease infinite;
@@ -36,5 +37,7 @@ body {
 }
 
 ul, li {
+	margin: 0;
+	padding: 0;
     list-style-type: none;
 }

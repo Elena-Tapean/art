@@ -1,6 +1,8 @@
 <template>
     <footer class="footer-bar">
-        <span>(c) Copyright, Elena Țăpean, 2014-2022.</span>
+        <div class="title">
+            <h3>(c) Copyright. E.Ț. 2022</h3>
+        </div>
     </footer>
 </template>
 
@@ -12,6 +14,7 @@ export default {
         }
     }
 }
+
 </script>
 
 <style lang="scss">
@@ -19,10 +22,33 @@ export default {
     @media only screen and (min-width: 0) {
         padding: 20px;
         
-        span {
-            font-size: 17px;
-            display: flex;
-            justify-content: right;
+        .title {
+            width: 20%;
+            top: 70%;
+            right: 50px;
+            position: absolute;
+            overflow: hidden;
+            animation: footer 2s linear forwards;
+        }
+
+        .title h3 {
+            font-size: 15px;
+            color: white;
+        }
+
+        @keyframes footer {
+            0% {
+                width: 0px;
+                height: 0px;
+            }
+            30% {
+                width: 50px;
+                height: 0px;
+            }
+            60% {
+                width: 50%;
+                height: 80px;
+            }
         }
     }
 }
