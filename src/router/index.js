@@ -5,6 +5,7 @@ import Gallery from '../views/Gallery.vue';
 import About from '../views/About.vue';
 import Contact from '../views/Contact.vue';
 import Pages from '../views/Pages.vue';
+import Page404 from '../views/Page404.vue';
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/pages/:id',
     name: 'pages',
     component: Pages
+  },
+  {
+    path: '*',
+    name: 'page404',
+    component: Page404
   }
 ]
 
