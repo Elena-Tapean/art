@@ -23,6 +23,7 @@
                         </div>
                     </div>
                 </div>
+                <router-link to="/random">Random</router-link>
             </nav>
         </div>
     </header>

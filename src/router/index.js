@@ -6,6 +6,7 @@ import About from '../views/About.vue';
 import Contact from '../views/Contact.vue';
 import Pages from '../views/Pages.vue';
 import Page404 from '../views/Page404.vue';
+import Random from '../views/Random.vue';
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ const routes = [
     path: '*',
     name: 'page404',
     component: Page404
+  },
+  {
+    path: '/random',
+    name: 'random',
+    component: Random
   }
 ]
 

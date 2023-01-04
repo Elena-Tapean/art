@@ -18,6 +18,8 @@ export default {
 <style lang="scss">
 .error-page {
     @media only screen and (min-width: 0) {
+        height: 100%;
+
         p {
             margin-top: 50px;
             font-size: 24px;
