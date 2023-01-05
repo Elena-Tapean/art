@@ -5,79 +5,59 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    pages: [
+/*    games: [
       {
         id: 1,
-        name: 'Project #1',
-        text: 'Personal resume in a website page created with React.js.'
+        name: 'Game_One',
+        description: 'Color the squares to match the image.'
       },
       {
         id: 2,
-        name: 'Project #2',
-        text: 'A bookstore app created with Vue.js.'
+        name: 'Game_Two',
+        description: 'Order the square to match the image.'
       },
       {
         id: 3,
-        name: 'Project #3',
-        text: 'A store created with Angular.js.'
-      },
-      {
-        id: 4,
-        name: 'Project #4',
-        text: 'A movie API app created with React.js.'
-      },
-      {
-        id: 5,
-        name: 'Project #5',
-        text: 'This experimental project created with Vue.js.'
+        name: 'Game_Three',
+        description: 'A classic game of X and Zero.'
       }
-    ]
+    ]*/
   },
   getters: {
   },
   mutations: {
-    SET_TEXT (state, data) {
-      state.pages = data
-      state.pagesCopy = [...data]
-    }
+/*    SET_GAMES (state, data) {
+      state.games = data
+      state.gamesCopy = [...data]
+    }*/
   },
   actions: {
-    async get_data ({commit}) {
+/*    async get_data ({commit}) {
       try {
         setTimeout (() => {
           const data = [
             {
               id: 1,
-              name: 'Project #1',
-              text: 'Personal resume in a website page created with React.js.'
+              name: 'Game_One',
+              description: 'Color the squares to match the image.'
             },
             {
               id: 2,
-              name: 'Project #2',
-              text: 'A bookstore app created with Vue.js.'
+              name: 'Game_Two',
+              description: 'Order the square to match the image.'
             },
             {
               id: 3,
-              name: 'Project #3',
-              text: 'A store created with Angular.js.'
-            },
-            {
-              id: 4,
-              name: 'Project #4',
-              text: 'A movie API app created with React.js.'
-            },
-            {
-              id: 5,
-              name: 'Project #5',
-              text: 'This experimental project created with Vue.js.'
+              name: 'Game_Three',
+              description: 'A classic game of X and Zero.'
             }
           ]
-          commit('SET_TEXT', data)
+          commit('SET_GAMES', data)
         }, 1000)
       } catch (error) {
         console.log(error)
       }
-    }
+    }*/
   },
   modules: {
   }

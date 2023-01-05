@@ -3,27 +3,23 @@
         <div class="navigation">
             <nav>
                 <router-link to="/">Home</router-link>
-                <router-link to="/gallery">Gallery</router-link>
-                <router-link to="/about">About</router-link>
-                <router-link to="/contact">Contact</router-link>
                 <div class="dropdown-navbar">
                     <div class="dropdown">
-                        <span>Pages</span> 
+                        <span>Games</span> 
                         <button @click="showMenu()" class="drop-btn">
                             <svg width="15" height="15" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M4.49878 5.625L8.87378 0.625H0.123779L4.49878 5.625Z" fill="white"/>
 </svg>
                         </button>
                         <div class="drop-content">
-                            <ul>
-                                <li v-for="page in pages" :key="page.id">
-                                    <router-link :to="`/pages/${page.id}`">{{ page.name }}</router-link>
-                                </li>
-                            </ul>
+                            <a href="/game_one">Game_One</a>
+                            <a href="/game_two">Game_Two</a>
+                            <a href="/game_three">Game_Three</a>
                         </div>
                     </div>
                 </div>
-                <router-link to="/random">Random</router-link>
+                <router-link to="/about">About</router-link>
+                <router-link to="/contact">Contact</router-link>
             </nav>
         </div>
     </header>
@@ -40,43 +36,22 @@ export default {
                     to: '/'
                 },
                 {
-                    name: 'Gallery',
-                    to: '/gallery'
-                },
-                {
                     name: 'About',
                     to: '/about'
                 },
                 {
                     name: 'Contact',
                     to: '/contact'
-                },
-                {
-                    name: 'Pages',
-                    to: '/pages/:id'
                 }
             ]
-        }
-    },
-    created () {
-        this.$store.dispatch('get_data')
-    },
-    computed: {
-        pages () {
-            return this.$store.state.pages
-        },
-        page () {
-            const id = this.$router.currentRoute.params.id
-            const pages = this.$store.state.pages
-            const page = pages.filter(obj => obj.id.toString() === id)[0]
-            return page
         }
     }
 }
 
-function showMenu (event) {
+function showMenu(event) {
     event.preventDefault();
 }
+
 </script>
 
 <style lang="scss">

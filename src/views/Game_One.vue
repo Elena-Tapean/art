@@ -1,8 +1,6 @@
 <template>
-    <section class="gallery-page">
-        <h1>Gallery</h1>
-        <q>Artworks waiting to be discovered.</q>
-        <br/>
+    <section class="game-one-page">
+        <h1>Game_One</h1>
         <p>Click on the squares and change their colors so as to match the one on the right. Some squares need to be double clicked. The default color is blue.</p>
         <br/>
         <div class="gallery-tableau">
@@ -44,7 +42,7 @@
                 </div>
             </div>
             <div>
-                <img src="../assets/complete_tableau.png" alt="complete tableau" />
+                <img class="game-img" src="../assets/complete_image.png" alt="complete image" />
             </div>
         </div>
     </section>
@@ -52,7 +50,7 @@
 
 <script>
 export default {
-    name: 'Gallery',
+    name: 'Game_One',
     data () {
         return {
         }
@@ -113,31 +111,22 @@ export default {
 </script>
 
 <style lang="scss">
-.gallery-page {
+.game-one-page {
     @media only screen and (min-width: 0) {
         height: 100%;
 
         h1 {
             margin-left: 40px;
-            font-size: 55px;
+            font-size: 45px;
             color: white;
             text-align: left;
-        }
-        q {
-            margin-left: 60px;
-            font-size: 23px;
-            color: white;
-            quotes: none;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
         }
         p {
             margin-left: 60px;
             font-size: 20px;
             color: white;
         }
-        img {
+        .game-img {
             width: 260px;
             height: 260px;
         }

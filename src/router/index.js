@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import Gallery from '../views/Gallery.vue';
+import Game_One from '../views/Game_One.vue';
+import Game_Two from '../views/Game_Two.vue';
+import Game_Three from '../views/Game_Three.vue';
 import About from '../views/About.vue';
 import Contact from '../views/Contact.vue';
-import Pages from '../views/Pages.vue';
 import Page404 from '../views/Page404.vue';
-import Random from '../views/Random.vue';
 
 Vue.use(VueRouter)
 
@@ -17,9 +17,19 @@ const routes = [
     component: Home
   },
   {
-    path: '/gallery',
-    name: 'gallery',
-    component: Gallery
+    path: '/game_one',
+    name: 'game_one',
+    component: Game_One
+  },
+  {
+    path: '/game_two',
+    name: 'game_two',
+    component: Game_Two
+  },
+  {
+    path: '/game_three',
+    name: 'game_three',
+    component: Game_Three
   },
   {
     path: '/about',
@@ -32,19 +42,9 @@ const routes = [
     component: Contact
   },
   {
-    path: '/pages/:id',
-    name: 'pages',
-    component: Pages
-  },
-  {
     path: '*',
     name: 'page404',
     component: Page404
-  },
-  {
-    path: '/random',
-    name: 'random',
-    component: Random
   }
 ]
 
